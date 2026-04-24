@@ -12,19 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Johancoco">
         <activity
+            android:name=".Pertemuan4.Custom2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan4.Custom1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan4.BangunRuangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan4.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pertemuan4.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan3.ThirdResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan3.ThirdActivity"
+            android:exported="true" />
+        <activity
             android:name=".Pertemuan2.CalculatorActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter> </activity>
-
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
