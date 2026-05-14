@@ -6,38 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8FAFC"
-    tools:context=".Pertemuan4.Custom2Activity">
+    tools:context=".Home.Pertemuan4.Custom2Activity">
 
-    <View
-        android:id="@+id/topBar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#FFFFFF"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/donker"
+        app:title="Profil Mahasiswa"
+        app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_menu_revert"
-        app:layout_constraintBottom_toBottomOf="@id/topBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/topBar"
-        app:tint="#2D3748" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Profil Mahasiswa"
-        android:textColor="#2D3748"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/topBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/topBar" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/profileImageCard"
@@ -48,14 +26,15 @@
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@android:drawable/presence_away"
-            android:background="#E2E8F0"/>
+            android:background="#E2E8F0"
+            android:contentDescription="Profile Image" />
     </androidx.cardview.widget.CardView>
 
     <TextView

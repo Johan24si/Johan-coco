@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">johan-coco</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="silahkan_pilih">Silahkan pilih...</string>
+    <string name="pertemuan_2">Pertemuan 2</string>
+    <string name="pertemuan_3">Pertemuan 3</string>
+    <string name="pertemuan_4">Pertemuan 4</string>
+    <string name="pertemuan_5">Pertemuan 5</string>
+    <string name="pertemuan_6">Pertemuan 6</string>
+    <string name="logout">Logout</string>
+    <string name="welcome_bina_desa">Selamat Datang di Bina Desa</string>
+    <string name="pilih_menu">Silahkan pilih menu pertemuan berikut:</string>
 </resources>

@@ -1,9 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Johancoco" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
     </style>
 
     <style name="Theme.Johancoco" parent="Base.Theme.Johancoco" />
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+        <item name="android:background">@drawable/bg_navbar_premium</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.App.Indicator</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <!-- Mengatur warna utama agar item yang aktif mengikuti warna donker -->
+        <item name="colorPrimary">@color/donker</item>
+    </style>
+
+    <style name="Widget.App.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <!-- Mengubah warna pil indikator menjadi warna donker (ungu kebiruan)
+             agar senada dengan toolbar dan tidak putih mencolok -->
+        <item name="android:color">@color/donker</item>
+    </style>
+
+    <style name="BottomNavTextAppearance" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
 </resources>

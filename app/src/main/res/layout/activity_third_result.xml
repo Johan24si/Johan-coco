@@ -6,7 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDF2F7"
-    tools:context=".Pertemuan3.ThirdResultActivity">
+    tools:context=".Home.Pertemuan3.ThirdResultActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3182CE"
+        app:title="Student Result"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:layout_width="500dp"
@@ -21,9 +30,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,7 +45,6 @@
                 android:id="@+id/tvWelcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-thin"
                 android:text="Selamat Datang,"
                 android:textColor="#4A5568"

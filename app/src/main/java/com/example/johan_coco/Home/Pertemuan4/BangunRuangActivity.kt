@@ -1,11 +1,10 @@
-package com.example.johan_coco.Pertemuan4
+package com.example.johan_coco.Home.Pertemuan4
 
+import android.R
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.johan_coco.R
 import com.example.johan_coco.databinding.ActivityBangunRuangBinding
 import kotlin.math.PI
 import kotlin.math.pow
@@ -20,23 +19,14 @@ class BangunRuangActivity : AppCompatActivity() {
         binding = ActivityBangunRuangBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol Back ke Dashboard
-        binding.btnBack.setOnClickListener {
-            val btnBack = findViewById<ImageButton>(R.id.btnBack)
-                finish() // Menutup activity ini dan kembali ke Dashboard
-
-        }
-
-        // Ambil data dari Dashboard
-        val title = intent.getStringExtra("TITLE")
-        val desc = intent.getStringExtra("DESC")
-
-        binding.tvTitle.text = title
-        binding.tvDesc.text = desc
+        // Set Toolbar
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.setNavigationOnClickListener { finish() }
 
         // Spinner
         val listBangun = arrayOf("Kubus", "Bola", "Tabung")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listBangun)
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, listBangun)
         binding.spinnerBangun.adapter = adapter
 
         // Klik tombol hitung

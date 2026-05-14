@@ -6,43 +6,21 @@
     android:layout_height="match_parent"
     android:background="#F7FAFC">
 
-    <View
-        android:id="@+id/topBar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#FFFFFF"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/donker"
+        app:title="Kalkulator Volume"
+        app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_menu_revert"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="#2D3748" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Kalkulator Volume"
-        android:textColor="#2D3748"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/topBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/topBar" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="Judul"
+                android:text="Bangun Ruang"
                 android:textColor="#1A202C"
                 android:textSize="24sp" />
 
@@ -64,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Deskripsi"
+                android:text="Pilih dan hitung volume bangun ruang"
                 android:textColor="#718096"
                 android:textSize="14sp" />
 
@@ -125,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint="#3182CE"
+                        android:backgroundTint="@color/orange"
                         android:text="Hitung Volume"
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"

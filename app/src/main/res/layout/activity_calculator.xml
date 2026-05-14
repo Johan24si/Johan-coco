@@ -7,104 +7,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    android:padding="16dp"
-    tools:context=".Pertemuan2.CalculatorActivity">
+    tools:context=".Home.Pertemuan2.CalculatorActivity">
 
-    <!-- Judul -->
-    <TextView
-        android:id="@+id/tvJudul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kalkulator Bangun"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#4CAF50"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4CAF50"
+        app:title="Kalkulator Bangun"
+        app:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Input Alas -->
-    <EditText
-        android:id="@+id/etAlas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Masukkan Alas"
-        android:inputType="numberDecimal"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/tvJudul"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <!-- Input Tinggi -->
-    <EditText
-        android:id="@+id/etTinggi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Masukkan Tinggi"
-        android:inputType="numberDecimal"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/etAlas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <!-- Button Segitiga -->
-    <Button
-        android:id="@+id/btnSegitiga"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Hitung Luas Segitiga"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/etTinggi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+            <!-- Input Alas -->
+            <EditText
+                android:id="@+id/etAlas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Alas"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginTop="16dp"/>
 
-    <!-- Input Sisi -->
-    <EditText
-        android:id="@+id/etSisi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Masukkan Sisi Kubus"
-        android:inputType="numberDecimal"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/btnSegitiga"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+            <!-- Input Tinggi -->
+            <EditText
+                android:id="@+id/etTinggi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Tinggi"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginTop="12dp"/>
 
-    <!-- Button Kubus -->
-    <Button
-        android:id="@+id/btnKubus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Hitung Volume Kubus"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/etSisi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+            <!-- Button Segitiga -->
+            <Button
+                android:id="@+id/btnSegitiga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hitung Luas Segitiga"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="12dp"/>
 
-    <!-- Text Hasil -->
-    <TextView
-        android:id="@+id/tvHasil"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Hasil akan tampil di sini"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/btnKubus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+            <!-- Input Sisi -->
+            <EditText
+                android:id="@+id/etSisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Sisi Kubus"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginTop="24dp"/>
+
+            <!-- Button Kubus -->
+            <Button
+                android:id="@+id/btnKubus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hitung Volume Kubus"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Text Hasil -->
+            <TextView
+                android:id="@+id/tvHasil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hasil akan tampil di sini"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.johan_coco.Pertemuan2
+package com.example.johan_coco.Home.Pertemuan2
 
 import android.os.Bundle
 import android.util.Log
@@ -25,10 +25,18 @@ class CalculatorActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_calculator)
 
+        // Handle Toolbar and Back Button
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         // Handle padding (edge to edge)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
             insets
         }
 
@@ -79,5 +87,10 @@ class CalculatorActivity : AppCompatActivity() {
 
             Log.d("HASIL", "Kubus: $hasil")
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

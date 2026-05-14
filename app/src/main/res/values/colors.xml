@@ -2,5 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="abu_gelap">#FF333333</color>
+    <color name="donker">#6A5BC2</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#1DB954</color>
+    <color name="orange">#FF9800</color>
+
+    <!-- Modern Humanitarian UI Palette -->
+    <color name="bg_dark">#0f172a</color>
+    <color name="bg_teal">#12343b</color>
+    <color name="bg_navbar_transparent">#D90F172A</color> <!-- 85% alpha of #0f172a -->
+    <color name="soft_white">#f8fafc</color>
+    <color name="light_gray">#cbd5e1</color>
+    <color name="highlight_orange">#ff7a00</color>
+
+    <!-- Active Indicator Color (Orange with 20% Alpha) -->
+    <color name="nav_indicator_orange">#33ff7a00</color>
 </resources>
