@@ -32,4 +32,9 @@
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
+
+    <!-- Style for Circular ImageView -->
+    <style name="CircleImage">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

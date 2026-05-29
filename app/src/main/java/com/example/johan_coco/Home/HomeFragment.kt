@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.johan_coco.Home.Pertemuan2.CalculatorActivity
 import com.example.johan_coco.Home.Pertemuan3.ThirdActivity
 import com.example.johan_coco.Home.Pertemuan4.DashboardActivity
+import com.example.johan_coco.Home.Pertemuan4.SettingsActivity
 import com.example.johan_coco.Home.Pertemuan5.WebViewActivity
 import com.example.johan_coco.Home.Petemuan6.SplashActivity
 import com.example.johan_coco.databinding.FragmentHomeBinding
@@ -32,6 +34,15 @@ class HomeFragment : Fragment() {
         // Setup Toolbar
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
+
+        // ChipGroup selection listener
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                binding.chipAll.id -> Toast.makeText(context, "All Filtered", Toast.LENGTH_SHORT).show()
+                binding.chipRecent.id -> Toast.makeText(context, "Recent Filtered", Toast.LENGTH_SHORT).show()
+                binding.chipFavorite.id -> Toast.makeText(context, "Favorite Filtered", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         // Pertemuan 2 - Calculator
         binding.btnToSecond.setOnClickListener {
@@ -56,6 +67,11 @@ class HomeFragment : Fragment() {
         // Pertemuan 6 - Splash/Main6
         binding.btnToSixth.setOnClickListener {
             startActivity(Intent(requireContext(), SplashActivity::class.java))
+        }
+
+        // Settings / More Menu (ListView Implementation)
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(requireContext(), SettingsActivity::class.java))
         }
     }
 

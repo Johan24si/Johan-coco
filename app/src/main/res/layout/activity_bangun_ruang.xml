@@ -46,16 +46,17 @@
                 android:textColor="#718096"
                 android:textSize="14sp" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card_modern"
                     android:orientation="vertical"
                     android:padding="20dp">
 
@@ -67,38 +68,69 @@
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
-                    <Spinner
-                        android:id="@+id/spinnerBangun"
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupBangun"
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginTop="8dp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:singleSelection="true"
+                        app:selectionRequired="true">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginVertical="16dp"
-                        android:background="#EDF2F7" />
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipKubus"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kubus"
+                            android:checked="true" />
 
-                    <EditText
-                        android:id="@+id/etSisi"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:background="@android:drawable/editbox_background"
-                        android:hint="Masukkan sisi / jari-jari"
-                        android:inputType="numberDecimal"
-                        android:paddingHorizontal="12dp" />
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipBola"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bola" />
 
-                    <EditText
-                        android:id="@+id/etTinggi"
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipTabung"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tabung" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSisi"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Masukkan sisi">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSisi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTinggi"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:background="@android:drawable/editbox_background"
-                        android:hint="Masukkan tinggi (khusus tabung)"
-                        android:inputType="numberDecimal"
-                        android:paddingHorizontal="12dp" />
+                        android:hint="Masukkan tinggi"
+                        android:visibility="gone">
 
-                    <Button
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTinggi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnHitung"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
@@ -109,7 +141,7 @@
                         android:textColor="#FFFFFF"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/tvContent"
@@ -117,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:gravity="center"
-                android:text="Rumus akan tampil di sini"
+                android:text="Rumus: V = s³"
                 android:textColor="#718096"
                 android:textSize="14sp" />
 

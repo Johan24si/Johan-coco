@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC"
+    android:background="@drawable/bg_main_gradient"
     tools:context=".Home.Pertemuan4.DashboardActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -53,79 +53,170 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
 
-            <LinearLayout
-                android:id="@+id/menuLayout"
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/menuGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:orientation="vertical"
+                app:columnCount="2"
                 app:layout_constraintTop_toBottomOf="@id/tvStudentName">
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/btnBangunRuang"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginBottom="12dp"
-                    android:backgroundTint="@color/orange"
-                    android:elevation="2dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Rumus Bangun Ruang"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:cornerRadius="16dp" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/claculator"
+                            android:contentDescription="Bangun Ruang"
+                            app:tint="@color/orange" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bangun Ruang"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/donker"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <Button
-                    android:id="@+id/btnCustom1"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginBottom="12dp"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Custom Activity 1"
-                    android:textAllCaps="false"
-                    android:textColor="@color/donker"
-                    app:cornerRadius="16dp" />
-
-                <Button
-                    android:id="@+id/btnCustom2"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginBottom="12dp"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Custom Activity 2"
-                    android:textAllCaps="false"
-                    android:textColor="@color/donker"
-                    app:cornerRadius="16dp" />
-
-                <Button
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/btnWebView"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginBottom="24dp"
-                    android:backgroundTint="@color/donker"
-                    android:elevation="2dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Web Bina Desa"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:cornerRadius="16dp" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/global"
+                            android:contentDescription="Web"
+                            app:tint="@color/donker" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Website"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/donker"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <Button
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_message"
+                            android:contentDescription="Pesan"
+                            app:tint="@color/donker" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pesan"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/donker"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_more"
+                            android:contentDescription="Pengaturan"
+                            app:tint="#4A5568" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pengaturan"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/donker"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/btnLogout"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:backgroundTint="#FFF5F5"
-                    android:fontFamily="sans-serif-bold"
-                    android:text="Logout"
-                    android:textAllCaps="false"
-                    android:textColor="#E53E3E"
-                    app:cornerRadius="16dp"
-                    app:strokeColor="#FED7D7"
-                    app:strokeWidth="1dp" />
-            </LinearLayout>
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/logout"
+                            android:contentDescription="Keluar"
+                            app:tint="#E53E3E" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Keluar"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="bold"
+                            android:textColor="#E53E3E"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.gridlayout.widget.GridLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

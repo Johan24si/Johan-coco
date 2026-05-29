@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.johan_coco.About.AboutFragment
 import com.example.johan_coco.Home.HomeFragment
+import com.example.johan_coco.Message.MessageFragment
 import com.example.johan_coco.Profile.ProfileFragment
 import com.example.johan_coco.LoginActivity
 import com.example.johan_coco.databinding.ActivityBaseBinding
@@ -48,6 +49,10 @@ class BaseActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.message -> {
+                    replaceFragment(MessageFragment())
                     true
                 }
                 R.id.about -> {

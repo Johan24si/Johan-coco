@@ -2,6 +2,7 @@ package com.example.johan_coco.Home.Pertemuan4
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -37,19 +38,21 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, BangunRuangActivity::class.java))
         }
 
-        // Navigasi ke Custom 1
-        binding.btnCustom1.setOnClickListener {
-            startActivity(Intent(this, Custom1Activity::class.java))
-        }
-
-        // Navigasi ke Custom 2
-        binding.btnCustom2.setOnClickListener {
-            startActivity(Intent(this, Custom2Activity::class.java))
-        }
-
         // Navigasi ke WebView
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))
+        }
+
+        // Fitur Message
+        binding.btnMessage.setOnClickListener {
+            Snackbar.make(binding.root, "Fitur Pesan akan segera hadir!", Snackbar.LENGTH_LONG)
+                .setAction("OKE") { }
+                .show()
+        }
+
+        // Navigasi ke Settings (ListView implementation)
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
 
         // Logout
