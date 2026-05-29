@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.gridlayout:gridlayout:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     
     // Glide for Image Loading
     implementation("com.github.bumptech.glide:glide:4.16.0")
