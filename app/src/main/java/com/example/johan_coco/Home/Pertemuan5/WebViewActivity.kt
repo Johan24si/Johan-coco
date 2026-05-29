@@ -6,7 +6,7 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.example.johan_coco.databinding.ActivityWebViewBinding
 
-class WebViewActivity : AppCompatActivity() {
+class                                                    WebViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebViewBinding
 
     @SuppressLint("SetJavaScriptEnabled")

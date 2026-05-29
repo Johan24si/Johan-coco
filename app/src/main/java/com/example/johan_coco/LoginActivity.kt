@@ -1,5 +1,6 @@
 package com.example.johan_coco
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -36,36 +37,49 @@ class LoginActivity : AppCompatActivity() {
 
         // --- TOMBOL SIGN IN ---
         binding.buttonSignIn.setOnClickListener {
-            val email = binding.inputEmail.text.toString().trim()
-            val password = binding.inputPassword.text.toString().trim()
+            val usernameInput = binding.inputEmail.text.toString().trim()
+            val passwordInput = binding.inputPassword.text.toString().trim()
 
             // Validasi Sederhana
-            if (email.isEmpty()) {
-                binding.layoutEmail.error = "Masukkan email Anda"
+            if (usernameInput.isEmpty()) {
+                binding.layoutEmail.error = "Masukkan username Anda"
                 return@setOnClickListener
             }
             binding.layoutEmail.error = null
 
-            if (password.isEmpty()) {
+            if (passwordInput.isEmpty()) {
                 binding.layoutPassword.error = "Masukkan password Anda"
                 return@setOnClickListener
             }
             binding.layoutPassword.error = null
 
-            // Simpan status login di SharedPreferences
-            val sharedPref = getSharedPreferences("BinaDesaPref", MODE_PRIVATE)
-            val editor = sharedPref.edit()
-            editor.putBoolean("isLogin", true)
-            editor.putString("USER_EMAIL", email)
-            editor.putBoolean("rememberMe", binding.checkRemember.isChecked)
-            editor.apply()
+            // Ambil data dari SharedPreferences (Data Registrasi)
+            val regPref = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+            val regUsername = regPref.getString("username", null)
+            val regPassword = regPref.getString("password", null)
 
-            Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+            // Logika Login
+            val isValidLogin = (usernameInput == passwordInput) || 
+                               (usernameInput == regUsername && passwordInput == regPassword)
 
-            // Pindah ke Halaman Utama (BaseActivity)
-            val intent = Intent(this, BaseActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (isValidLogin) {
+                // Simpan status login di SharedPreferences
+                val sharedPref = getSharedPreferences("BinaDesaPref", MODE_PRIVATE)
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("USER_EMAIL", usernameInput)
+                editor.putBoolean("rememberMe", binding.checkRemember.isChecked)
+                editor.apply()
+
+                Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+
+                // Pindah ke Halaman Utama (BaseActivity)
+                val intent = Intent(this, BaseActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // --- FORGOT PASSWORD ---
