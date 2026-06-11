@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.johan_coco.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +23,16 @@ class LoginActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
 
-        // --- NAVIGASI KE REGISTER (Sign Up) ---
+        // Navigasi ke Register
         binding.tabSignUp.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
@@ -35,35 +41,43 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
-        // --- TOMBOL SIGN IN ---
+        // Tombol Sign In
         binding.buttonSignIn.setOnClickListener {
+
             val usernameInput = binding.inputEmail.text.toString().trim()
             val passwordInput = binding.inputPassword.text.toString().trim()
 
-            // Validasi Sederhana
+            // Validasi Username
             if (usernameInput.isEmpty()) {
                 binding.layoutEmail.error = "Masukkan username Anda"
                 return@setOnClickListener
             }
             binding.layoutEmail.error = null
 
+            // Validasi Password
             if (passwordInput.isEmpty()) {
                 binding.layoutPassword.error = "Masukkan password Anda"
                 return@setOnClickListener
             }
             binding.layoutPassword.error = null
 
-            // Ambil data dari SharedPreferences (Data Registrasi)
+            // Ambil data hasil registrasi
             val regPref = getSharedPreferences("UserData", Context.MODE_PRIVATE)
             val regUsername = regPref.getString("username", null)
             val regPassword = regPref.getString("password", null)
 
-            // Logika Login
-            val isValidLogin = (usernameInput == passwordInput) || 
-                               (usernameInput == regUsername && passwordInput == regPassword)
+            // Akun Default
+            val defaultUsername = "johan"
+            val defaultPassword = "123"
+
+            // Cek Login
+            val isValidLogin =
+                (usernameInput == defaultUsername && passwordInput == defaultPassword) ||
+                        (usernameInput == regUsername && passwordInput == regPassword)
 
             if (isValidLogin) {
-                // Simpan status login di SharedPreferences
+
+                // Simpan status login
                 val sharedPref = getSharedPreferences("BinaDesaPref", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
@@ -71,33 +85,55 @@ class LoginActivity : AppCompatActivity() {
                 editor.putBoolean("rememberMe", binding.checkRemember.isChecked)
                 editor.apply()
 
-                Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Login Berhasil!",
+                    Toast.LENGTH_SHORT
+                ).show()
 
-                // Pindah ke Halaman Utama (BaseActivity)
-                val intent = Intent(this, BaseActivity::class.java)
-                startActivity(intent)
+                // Pindah ke halaman utama
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
+
             } else {
-                Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Username atau Password salah",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
-        // --- FORGOT PASSWORD ---
+        // Forgot Password
         binding.textForgotPassword.setOnClickListener {
-            Toast.makeText(this, "Fitur Lupa Password akan segera hadir", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "Fitur Lupa Password akan segera hadir",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
-        // --- TOMBOL GOOGLE & FACEBOOK ---
+        // Login Google
         binding.buttonGoogle.setOnClickListener {
-            Toast.makeText(this, "Menghubungkan ke Google...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "Menghubungkan ke Google...",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
+        // Login Facebook
         binding.buttonFacebook.setOnClickListener {
-            Toast.makeText(this, "Menghubungkan ke Facebook...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "Menghubungkan ke Facebook...",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
-        // --- LOAD DATA REMEMBER ME ---
+        // Load Remember Me
         val sharedPref = getSharedPreferences("BinaDesaPref", MODE_PRIVATE)
+
         if (sharedPref.getBoolean("rememberMe", false)) {
             val savedEmail = sharedPref.getString("USER_EMAIL", "")
             binding.inputEmail.setText(savedEmail)

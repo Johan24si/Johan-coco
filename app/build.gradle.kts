@@ -42,10 +42,20 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.gridlayout:gridlayout:1.1.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
     
     // Glide for Image Loading
     implementation("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+    // dependencies di build.gradle (Module: app)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+// Tambah ini saja
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

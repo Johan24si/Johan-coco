@@ -17,7 +17,7 @@
         app:titleTextColor="#f8fafc"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:overScrollMode="never"
@@ -44,9 +44,10 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="All"
-                    app:chipBackgroundColor="#26FFFFFF"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    app:chipBackgroundColor="#26FFFFFF" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipRecent"
@@ -54,8 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Recent"
-                    app:chipBackgroundColor="#26FFFFFF"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    app:chipBackgroundColor="#26FFFFFF" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFavorite"
@@ -63,8 +64,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Favorite"
-                    app:chipBackgroundColor="#26FFFFFF"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    app:chipBackgroundColor="#26FFFFFF" />
+
             </com.google.android.material.chip.ChipGroup>
 
             <!-- JUDUL WELCOME -->
@@ -89,13 +91,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToSecond"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#ff7a00"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#ff7a00"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -108,13 +110,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToThird"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#f43f5e"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#f43f5e"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -127,13 +129,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToFourth"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#7c3aed"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#7c3aed"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -146,13 +148,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToFifth"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#0d9488"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#0d9488"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -165,13 +167,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToSixth"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#16a34a"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#16a34a"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -184,13 +186,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnToTenth"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="#3b82f6"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#3b82f6"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -202,21 +204,84 @@
 
             </androidx.gridlayout.widget.GridLayout>
 
-            <!-- Settings / More Button using MaterialButton -->
+            <!-- ───────────── NEWS SECTION ───────────── -->
+
+            <!-- Section Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Berita Terbaru"
+                    android:textColor="#f8fafc"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geser →"
+                    android:textColor="#64748b"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- Loading Indicator -->
+            <ProgressBar
+                android:id="@+id/progressBarNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <!-- Error / Empty State -->
+            <TextView
+                android:id="@+id/tvNewsError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text=""
+                android:textColor="#f87171"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <!-- RecyclerView Berita Horizontal -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingEnd="16dp"
+                tools:listitem="@layout/item_news" />
+
+            <!-- ───────────── END NEWS SECTION ───────────── -->
+
+            <!-- Settings / More Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSettings"
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="24dp"
-                android:text="Settings &amp; Info"
-                app:icon="@android:drawable/ic_menu_preferences"
-                app:cornerRadius="12dp"
                 android:backgroundTint="#26FFFFFF"
+                android:text="SETTINGS &amp; INFO"
                 android:textColor="#FFFFFF"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_preferences"
                 app:iconTint="#FFFFFF" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.johan_coco.Onboarding.OnboardingActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,12 +17,19 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             val sharedPref = getSharedPreferences("BinaDesaPref", Context.MODE_PRIVATE)
+            val onboardingFinished = sharedPref.getBoolean("onboardingFinished", false)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
-            if (isLogin) {
-                startActivity(Intent(this, BaseActivity::class.java))
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+            when {
+                !onboardingFinished -> {
+                    startActivity(Intent(this, OnboardingActivity::class.java))
+                }
+                isLogin -> {
+                    startActivity(Intent(this, BaseActivity::class.java))
+                }
+                else -> {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
             }
             finish()
         }, 3000)

@@ -10,4 +10,15 @@
     <string name="logout">Logout</string>
     <string name="welcome_bina_desa">Selamat Datang di Bina Desa</string>
     <string name="pilih_menu">Silahkan pilih menu pertemuan berikut:</string>
+
+    <!-- Onboarding Strings -->
+    <string name="onboarding_title_1">Selamat Datang</string>
+    <string name="onboarding_desc_1">Aplikasi Bina Desa membantu Anda mengelola kegiatan desa dengan lebih mudah dan efisien.</string>
+    <string name="onboarding_title_2">Fitur Lengkap</string>
+    <string name="onboarding_desc_2">Mulai dari perhitungan bangun ruang hingga akses website desa tersedia dalam satu genggaman.</string>
+    <string name="onboarding_title_3">Mudah Digunakan</string>
+    <string name="onboarding_desc_3">Antarmuka yang modern dan intuitif dirancang khusus untuk kenyamanan pengguna.</string>
+    <string name="btn_next">Selanjutnya</string>
+    <string name="btn_get_started">Ayo Mulai</string>
+    <string name="btn_skip">Lewati</string>
 </resources>

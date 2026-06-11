@@ -8,6 +8,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.johan_coco.BaseActivity
 import com.example.johan_coco.LoginActivity
+import com.example.johan_coco.Onboarding.OnboardingActivity
 import com.example.johan_coco.R
 
 @SuppressLint("CustomSplashScreen")
@@ -19,12 +20,18 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val sharedPref = getSharedPreferences("BinaDesaPref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
+            val onboardingFinished = sharedPref.getBoolean("onboardingFinished", false)
 
-            if (isLogin) {
-                // Point to BaseActivity instead of DashboardActivity
-                startActivity(Intent(this, BaseActivity::class.java))
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+            when {
+                !onboardingFinished -> {
+                    startActivity(Intent(this, OnboardingActivity::class.java))
+                }
+                isLogin -> {
+                    startActivity(Intent(this, BaseActivity::class.java))
+                }
+                else -> {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
             }
             finish()
         }, 3000)
