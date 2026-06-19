@@ -53,9 +53,20 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
-// Tambah ini saja
+    // Tambah ini saja
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // ZXing for QR Code
+    implementation("com.google.zxing:core:3.5.2")
+
+    // CameraX
+    implementation("androidx.camera:camera-camera2:1.3.3")
+    implementation("androidx.camera:camera-lifecycle:1.3.3")
+    implementation("androidx.camera:camera-view:1.3.3")
+
+    // ML Kit untuk QR code (ringan, offline)
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

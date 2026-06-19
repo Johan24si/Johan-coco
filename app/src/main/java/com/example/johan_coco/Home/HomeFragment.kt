@@ -16,6 +16,7 @@ import com.example.johan_coco.Home.Pertemuan4.SettingsActivity
 import com.example.johan_coco.Home.Pertemuan5.WebViewActivity
 import com.example.johan_coco.Home.Petemuan6.SplashActivity
 import com.example.johan_coco.Home.pertemuan_10.TenthActivity
+import com.example.johan_coco.Home.pertemuan_13.ThirteenthActivity
 import com.example.johan_coco.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -78,6 +79,9 @@ class HomeFragment : Fragment() {
         }
         binding.btnToTenth.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+        binding.btnToThirteenth.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirteenthActivity::class.java))
         }
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(requireContext(), SettingsActivity::class.java))

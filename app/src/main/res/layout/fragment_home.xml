@@ -202,6 +202,25 @@
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnToThirteenth"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#8b5cf6"
+                    app:cardCornerRadius="16dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Pertemuan 13"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
             </androidx.gridlayout.widget.GridLayout>
 
             <!-- ───────────── NEWS SECTION ───────────── -->
