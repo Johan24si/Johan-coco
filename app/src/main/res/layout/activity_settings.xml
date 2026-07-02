@@ -14,13 +14,80 @@
         app:title="Settings"
         app:titleTextColor="#ffffff" />
 
-    <ListView
-        android:id="@+id/listViewSettings"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#e2e8f0"
-        android:dividerHeight="1dp"
-        android:padding="16dp"
-        android:clipToPadding="false" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Reminder Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pengingat Kegiatan Bina Desa"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#0f172a" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Atur pengingat untuk kembali ke aplikasi (menit):"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/etReminderMinutes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Contoh: 5"
+                        android:inputType="number"
+                        android:layout_marginTop="8dp" />
+
+                    <Button
+                        android:id="@+id/btnSetReminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pasang Pengingat"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="#0f172a"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Lainnya"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <ListView
+                android:id="@+id/listViewSettings"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:divider="#e2e8f0"
+                android:dividerHeight="1dp"
+                android:clipToPadding="false" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
