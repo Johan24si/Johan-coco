@@ -7,12 +7,12 @@ import retrofit2.http.GET
 
 interface NewsService {
 
-    @GET("feed/")
+    @GET("rss/")
     fun getNews(): Call<String>
 
     companion object {
 
-        private const val BASE_URL = "https://www.merdeka.com/"
+        private const val BASE_URL = "https://www.cnbcindonesia.com/"
 
         fun create(): NewsService {
             val retrofit = Retrofit.Builder()

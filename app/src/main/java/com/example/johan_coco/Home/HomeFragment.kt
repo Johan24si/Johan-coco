@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.johan_coco.Home.Pertemuan2.CalculatorActivity
@@ -39,17 +38,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupToolbar()
+
         setupChips()
         setupMenuButtons()
         setupNewsList()
         fetchNews()
     }
 
-    private fun setupToolbar() {
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
-    }
+
 
     private fun setupChips() {
         binding.chipGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -92,7 +88,7 @@ class HomeFragment : Fragment() {
         newsAdapter = NewsAdapter(emptyList<Post>())
         binding.rvNews.layoutManager = LinearLayoutManager(
             requireContext(),
-            LinearLayoutManager.HORIZONTAL,
+            LinearLayoutManager.VERTICAL,
             false
         )
         binding.rvNews.adapter = newsAdapter
