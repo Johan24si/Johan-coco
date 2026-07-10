@@ -2,6 +2,8 @@ package com.example.johan_coco.Home
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,8 +43,41 @@ class HomeFragment : Fragment() {
 
         setupChips()
         setupMenuButtons()
+        setupSearch()
         setupNewsList()
         fetchNews()
+    }
+
+    private fun setupSearch() {
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val query = s.toString()
+                newsAdapter.filter(query)
+                filterMenuButtons(query)
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+    }
+
+    private fun filterMenuButtons(query: String) {
+        val menuButtons = listOf(
+            binding.btnToSecond to "Pertemuan 2",
+            binding.btnToThird to "Pertemuan 3",
+            binding.btnToFourth to "Pertemuan 4",
+            binding.btnToFifth to "Pertemuan 5",
+            binding.btnToSixth to "Pertemuan 6",
+            binding.btnToTenth to "Pertemuan 10",
+            binding.btnToThirteenth to "Pertemuan 13"
+        )
+
+        menuButtons.forEach { (button, title) ->
+            if (title.contains(query, ignoreCase = true)) {
+                button.visibility = View.VISIBLE
+            } else {
+                button.visibility = View.GONE
+            }
+        }
     }
 
 

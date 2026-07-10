@@ -14,6 +14,9 @@ import com.example.johan_coco.R
 class NewsAdapter(private var posts: List<Post>) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
+    private var originalPosts: List<Post> = posts
+    private var currentQuery: String = ""
+
     inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivThumbnail: ImageView = itemView.findViewById(R.id.ivNewsThumbnail)
         val tvTitle: TextView = itemView.findViewById(R.id.tvNewsTitle)
@@ -47,7 +50,19 @@ class NewsAdapter(private var posts: List<Post>) :
     override fun getItemCount(): Int = posts.size
 
     fun updateData(newPosts: List<Post>) {
-        posts = newPosts
+        originalPosts = newPosts
+        filter(currentQuery)
+    }
+
+    fun filter(query: String) {
+        currentQuery = query
+        posts = if (query.isEmpty()) {
+            originalPosts
+        } else {
+            originalPosts.filter {
+                it.title.contains(query, ignoreCase = true)
+            }
+        }
         notifyDataSetChanged()
     }
 }
